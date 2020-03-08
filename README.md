@@ -1,6 +1,6 @@
 # dx-actions
 
-## **Inputs**
+## **Inputs** 
 
 ### **`private_action`**
 
