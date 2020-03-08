@@ -6,7 +6,7 @@
 
 **Required**
 
-### **`action_path`**
+### **`action_path`**  
 
 **Optional**
 
