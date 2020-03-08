@@ -1,0 +1,15 @@
+name: 'DX Use private actions'
+description: 'Use private actions'
+inputs:
+  TOKEN:
+    description: 'Github token'
+    required: true
+  REPO:
+    description: 'Repository'
+    required: true
+  ACTION-PATH:
+    description: 'Action path'
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
