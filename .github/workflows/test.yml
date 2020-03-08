@@ -22,4 +22,5 @@ jobs:
           job_name: 'test'
           job_status: ${{ job.status }}
           run_id: ${{ github.run_id }}
+          job_payload: '{ "version": "0.0.1", "url": "https://github.com/akremi-khayreddine/dx-actions-webhook/releases/tag/0.0.1" }'
           pipeline_id: dx-actions-loader
