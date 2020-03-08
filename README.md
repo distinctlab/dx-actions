@@ -2,13 +2,10 @@
  
 ## **Inputs**
 
-### **`TOKEN`**
+### **`private_action`**
 **Required**
 
-### **`REPO`**
-**Required**
-
-### **`ACTION-PATH`**
+### **`action_path`**
 **Optional**
 
 ## **Examples**
@@ -17,11 +14,14 @@
 
 ```yaml
 - uses: distinctlab/dx-actions
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   with:
-    TOKEN: ${{ secrets.TOKEN }}
-    REPO: akremi-khayreddine/dx-webhook
-    JOB_NAME: 'test'
-    JOB_STATUS: ${{ job.status }}
-    RUN_ID: ${{ github.run_id }}
-    PIPELINE_ID: dx-webhook
+    private_action: akremi-khayreddine/dx-webhook@master
+    job_name: 'test'
+    job_status: ${{ job.status }}
+    next_job: 'build' #Optional
+    run_id: ${{ github.run_id }}
+    job_payload: '{ "version": "0.0.1", "url": "" }' #Optional
+    pipeline_id: dx-webhook
 ```

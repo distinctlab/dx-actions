@@ -1,13 +1,10 @@
 name: 'DX Use private actions'
 description: 'Use private actions'
 inputs:
-  TOKEN:
-    description: 'Github token'
+  private_action:
+    description: 'Private Action repository'
     required: true
-  REPO:
-    description: 'Repository'
-    required: true
-  ACTION-PATH:
+  action_path:
     description: 'Action path'
     required: false
 runs:

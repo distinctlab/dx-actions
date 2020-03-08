@@ -6,9 +6,9 @@ const { readFileSync } = require("fs");
 const { join } = require("path");
 const { sync } = require("rimraf");
 
-const token = core.getInput('TOKEN', { required: true });
-const repositoryName = core.getInput('REPO', { required: true });
-const actionDir = core.getInput('ACTION-PATH', { required: false });
+const token = process.env.GITHUB_TOKEN;
+const repositoryName = core.getInput('private_action', { required: true });
+const actionDir = core.getInput('action_path', { required: false });
 const workPath = './.private-action';
 
 run(
