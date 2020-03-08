@@ -19,7 +19,7 @@
 - uses: distinctlab/dx-actions
   with:
     TOKEN: ${{ secrets.TOKEN }}
-    REPO: akremi-khayreddine/dx-webhook
+    REPO: disttinctlab/dx-actions-webhook
     JOB_NAME: 'test'
     JOB_STATUS: ${{ job.status }}
     RUN_ID: ${{ github.run_id }}
