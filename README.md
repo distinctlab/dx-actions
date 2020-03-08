@@ -18,7 +18,7 @@
 ```yaml
 - uses: distinctlab/dx-actions
   with:
-    TOKEN: ${{ secrets.TOKEN }}
+    TOKEN: ${{ secrets.GITHUB_TOKEN }}
     REPO: distinctlab/dx-actions-webhook
     JOB_NAME: 'test'
     JOB_STATUS: ${{ job.status }}
