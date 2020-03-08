@@ -2,7 +2,7 @@
 
 ## **Inputs** 
   
-### **`private_action`**
+### **`private_action`**   
 
 **Required**
 
