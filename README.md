@@ -22,8 +22,8 @@
     REPO: distinctlab/dx-actions-webhook
     JOB_NAME: 'test'
     JOB_STATUS: ${{ job.status }}
-    NEXT_JOB: 'build', #Optional
+    NEXT_JOB: 'build' #Optional
     RUN_ID: ${{ github.run_id }}
-    JOB_PAYLOAD: '{ "version": "0.0.1", "url": "" }'
+    JOB_PAYLOAD: '{ "version": "0.0.1", "url": "" }' #Optional
     PIPELINE_ID: dx-webhook
 ```
