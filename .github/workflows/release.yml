@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        uses: ./
+        with:
+          job_name: 'build'
+          job_status: ${{ job.status }}
+          next_job: 'deploy'
+          run_id: ${{ github.run_id }}
+          pipeline_id: dx-actions-webhook
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        uses: ./
+        with:
+          job_name: 'deploy'
+          job_status: ${{ job.status }}
+          run_id: ${{ github.run_id }}
+          job_payload: '{ "version": "0.0.1", "url": "https://github.com/akremi-khayreddine/dx-actions-webhook/releases/tag/0.0.1" }'
+          pipeline_id: dx-actions-webhook
