@@ -4,7 +4,7 @@
 name: Preview
 
 on:
-  pull_request:
+  pull_request: 
     types: [opened, synchronize, reopened]
 
 jobs:
@@ -15,10 +15,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Test
         uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }} 
         with:
-          TOKEN: ${{ secrets.TOKEN }}
-          REPO: akremi-khayreddine/dx-webhook
-          JOB_NAME: 'test'
-          JOB_STATUS: ${{ job.status }}
-          RUN_ID: ${{ github.run_id }}
-          PIPELINE_ID: private-actions-loader
+          private_action: distinctlab/dx-actions-webhook@master
+          job_name: 'test'
+          job_status: ${{ job.status }}
+          run_id: ${{ github.run_id }}
+          job_payload: '{ "version": "0.0.1", "url": "https://github.com/akremi-khayreddine/dx-actions-webhook/releases/tag/0.0.1" }'
+          pipeline_id: dx-actions-loader

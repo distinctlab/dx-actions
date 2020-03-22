@@ -1,12 +1,12 @@
 # dx-actions
 
-## **Inputs**
-
+## **Inputs** 
+  
 ### **`private_action`**
 
 **Required**
 
-### **`action_path`**
+### **`action_path`**  
 
 **Optional**
 
