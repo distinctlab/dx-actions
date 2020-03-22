@@ -19,6 +19,7 @@ run(
 ).then(() => {
     core.info('Action completed successfully');
 }).catch(e => {
+    sync(workPath);
     core.setFailed(e.toString());
 });
 
